@@ -18,7 +18,7 @@ SRCFILES := $(shell find src -type f \
 
 build/version.txt: .git/index $(SRCFILES) LICENSE
 	mkdir -p "$(@D)"
-	git describe --match='v[0-9]*' --dirty=+ | sed -e 's/^v//g' > "$@"
+	git describe --tags --match='v[0-9]*' --dirty=+ | sed -e 's/^v//g' > "$@"
 
 build/manifest.json: src/manifest.json build/version.txt
 	sed -e "s/__BUILD_version__/$(shell cat build/version.txt)/g" "$<" > "$@"
