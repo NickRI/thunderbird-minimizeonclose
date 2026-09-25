@@ -3,7 +3,8 @@
   "applications": {
     "gecko": {
       "id": "minimizeonclose@rsjtdrjgfuzkfg.com",
-      "strict_min_version": "128.0"
+      "strict_min_version": "128.0",
+      "strict_max_version": "160.*"
     }
   },
   "name": "Minimize on Close",
